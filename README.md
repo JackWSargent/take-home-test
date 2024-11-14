@@ -45,4 +45,4 @@ Gets movies from that year with the name, release date, vote average, and editor
 
 ### http://localhost:{port}/api/all-movies/{year}
 
-Gets all movies from that year. I was getting throttled I think trying to request 40k requests at a time. I could use a websocket and request 5 pages at a time but that would take a really long time. There is no api request that could batch all these requests into one or a few requests.  
+Gets all movies from that year. I was getting throttled I think trying to request 60k+ requests at a time. I could use a websocket and request a certain number of pages of movies (credits) at a time but that would take a really long time. There is no api request that could batch all these requests into one or a few requests.
