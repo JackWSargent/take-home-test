@@ -25,6 +25,10 @@ app.get('/', async (req: ExpressRequest, res: Response) => {
 });
 
 app.get('/api/movies/:year', async (req: ExpressRequest, res: Response) => {
+  if (!token) {
+    console.log("BEARER_TOKEN is undefined");
+    await res.send("BEARER_TOKEN is undefined")
+  }
   const year = req.params.year ? req.params.year : new Date().getFullYear();
   const url = `https://api.themoviedb.org/3/discover/movie?language=en-US&page=${1}&primary_release_year=${year}`
   // const movies: any = await getAllMovies(year, 1, []);
@@ -70,6 +74,12 @@ app.get('/api/movies/:year', async (req: ExpressRequest, res: Response) => {
 });
 
 app.get('/api/all-movies/:year', async (req: ExpressRequest, res: Response) => {
+
+  if (!token) {
+    console.log("BEARER_TOKEN is undefined");
+    await res.send("BEARER_TOKEN is undefined")
+  }
+  
   const year = req.params.year ? req.params.year : new Date().getFullYear();
   const url = `https://api.themoviedb.org/3/discover/movie?language=en-US&page=${1}&primary_release_year=${year}`
   // const movies: any = await getAllMovies(year, 1, []);
