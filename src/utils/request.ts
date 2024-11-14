@@ -2,7 +2,7 @@ class Request {
     private url: string = "";
     private headers: HeadersInit = {};
     private body: Object = {};
-    constructor(_url?: string, _headers?: HeadersInit, _body?: string) {
+    constructor(_url?: string, _headers?: HeadersInit, _body?: Object) {
         if (_url) this.url = _url;
         if (_headers) this.headers = _headers;
         if (_body) this.body = _body;
